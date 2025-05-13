@@ -1,0 +1,76 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  background-color: #111;
+  position: relative;
+}
+
+#user-button {
+  background-color: #fff;
+  color: #111;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+#user-button:hover {
+  background-color: #f0f0f0;
+}
+
+#user-button:focus {
+  outline: 2px solid #007bff;
+}
+
+.dropdown {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.dropdown.visible {
+  opacity: 1;
+  transform: translateY(0);
+  /* Debug: Add temporary border to confirm visibility */
+  border: 1px solid red;
+}
+
+.dropdown a,
+.dropdown button {
+  display: block;
+  margin: 5px 0;
+  text-decoration: none;
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: left;
+  padding: 5px;
+}
+
+.dropdown a:hover,
+.dropdown button:hover {
+  background-color: #f5f5f5;
+}
+
+.hidden {
+  display: none;
+}
