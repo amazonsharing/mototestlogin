@@ -1,0 +1,11 @@
+{
+  "name": "moto-app",
+  "version": "1.0.0",
+  "description": "Motorsport-themed Firebase app",
+  "scripts": {
+    "start": "http-server -c-1 -p 8080 public"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
+}

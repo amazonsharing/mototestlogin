@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MotoApp - Dashboard</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="icon" href="favicon.ico">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="assets/logo.png" alt="MotoApp Logo" class="logo">
+      <h1>Welcome to MotoApp</h1>
+      <nav>
+        <a href="profile.html">Profile</a>
+        <a href="#" id="logout">Logout</a>
+      </nav>
+    </header>
+    <main>
+      <p class="welcome">Rev up for the ultimate motorsport experience!</p>
+      <div class="race-standings">
+        <h2>Race Standings (Coming Soon)</h2>
+      </div>
+    </main>
+  </div>
+  <script type="module">
+    import { checkAuth, logout } from './js/auth.js';
+    checkAuth();
+    document.getElementById('logout').addEventListener('click', (e) => {
+      e.preventDefault();
+      logout('error');
+    });
+  </script>
+</body>
+</html>

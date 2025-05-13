@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MotoApp - Login</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="icon" href="favicon.ico">
+</head>
+<body>
+  <div class="container">
+    <img src="assets/logo.png" alt="MotoApp Logo" class="logo">
+    <h1>Login</h1>
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+      <p id="error" class="error"></p>
+      <a href="#" id="resetPassword">Forgot Password?</a>
+    </form>
+    <button id="googleSignIn" class="google-btn">Sign in with Google</button>
+    <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+  </div>
+  <script type="module">
+    import { login, resetPassword, checkAuth, signInWithGoogle } from './js/auth.js';
+    checkAuth();
+    document.getElementById('loginForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      await login(email, password, 'error');
+    });
+    document.getElementById('resetPassword').addEventListener('click', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      if (email) await resetPassword(email, 'error');
+      else document.getElementById('error').textContent = 'Please enter your email.';
+    });
+    document.getElementById('googleSignIn').addEventListener('click', async (e) => {
+      e.preventDefault();
+      await signInWithGoogle('error');
+    });
+  </script>
+</body>
+</html>
