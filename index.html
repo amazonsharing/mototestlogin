@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/index.css">
   <title>Home</title>
 </head>
 <body>
-  <div class="top-bar">
-    <button id="user-button" aria-haspopup="true" aria-expanded="false">User</button>
-    <div id="dropdown" class="dropdown hidden">
-      <div id="unauthenticated">
-        <a href="login.html">Login</a>
-        <a href="signup.html">Signup</a>
+  <header class="top-bar">
+    <div class="logo">MyApp</div>
+    <nav class="user-menu">
+      <button id="user-button" aria-haspopup="true" aria-expanded="false">
+        <span class="user-icon">👤</span>
+        <span id="username">User</span>
+      </button>
+        <div id="dropdown" class="dropdown hidden">
+        <div id="unauthenticated">
+          <a href="login.html">Login</a>
+          <a href="signup.html">Signup</a>
+        </div>
+        <div id="authenticated" class="hidden">
+          <p id="username-display"></p>
+          <a href="profile.html">Profile</a>
+          <button id="logout-btn">Logout</button>
+        </div>
       </div>
-      <div id="authenticated" class="hidden">
-        <p id="username-display"></p>
-        <a href="profile.html">Profile</a>
-        <button id="logout-btn">Logout</button>
-      </div>
-    </div>
-  </div>
+    </nav>
+  </header>
   <main>
-    <h1>Welcome</h1>
+    <div class="hero">
+      <h1>Welcome to MyApp</h1>
+      <p>Connect, share, and explore with ease</p>
+    </div>
   </main>
   <script type="module" src="js/auth.js"></script>
 </body>

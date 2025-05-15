@@ -148,3 +148,16 @@ onAuthStateChanged(auth, (user) => {
     }
   }
 });
+import { GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-auth.js";
+
+// Google Sign-In
+const googleLoginBtn = document.getElementById("google-login");
+if (googleLoginBtn) {
+  const provider = new GoogleAuthProvider();
+  googleLoginBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    signInWithPopup(auth, provider)
+      .then(() => window.location.href = "index.html")
+      .catch((err) => alert(err.message));
+  });
+}
