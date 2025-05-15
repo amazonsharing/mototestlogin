@@ -7,13 +7,16 @@
   <link rel="stylesheet" href="css/profile.css">
   <title>Profile</title>
 </head>
+<style>
+    a { text-decoration: none !important; color: white !important; }
+</style>
+
 <body>
   <header class="top-bar">
-    <div class="logo">MyApp</div>
+<div class="logo"><a href="index.html">moto</a></div>
     <nav class="user-menu">
       <button id="user-button" aria-haspopup="true" aria-expanded="false">
-        <span class="user-icon">👤</span>
-        <span id="username">User</span>
+        <span id="username">Loading...</span>
       </button>
 
     </nav>
@@ -21,14 +24,42 @@
   <main>
     <div id="profile-container">
       <div class="avatar-container">
-        <div class="avatar">👤</div>
+<img id="profile-pic" class="avatar" src="" alt="">
       </div>
       <h2>Profile</h2>
-      <p id="profile-name"></p>
-      <p id="profile-email"></p>
-      <button id="logout-btn">Logout</button>
+      <p id="profile-name">N/A</p>
+      <p id="profile-email">-</p>
+      <button id="logout-btn">Logout</button><br><br>
+          <!--<h2>Other</h2>-->
+<div>
+  <span class="edit-option">Edit Email</span>
+  <a href="login.html"><p class="edit-option">Change Password</p></a>
+  <span class="edit-option">2FA</span>
+</div>
+
+<div id="message" class="message"></div>
+
+
     </div>
   </main>
   <script type="module" src="js/auth.js"></script>
+ 
+<script>
+  const options = document.querySelectorAll('.edit-option');
+  const message = document.getElementById('message');
+
+  options.forEach(option => {
+    option.addEventListener('click', () => {
+      message.textContent = 'Not Ready Yet';
+      message.classList.add('show');
+
+      setTimeout(() => {
+        message.classList.remove('show');
+      }, 3000);
+    });
+  });
+</script>
+
 </body>
 </html>
+
