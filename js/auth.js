@@ -122,7 +122,7 @@ onAuthStateChanged(auth, (user) => {
     if (unauth && authBlock && usernameDisplay) {
       unauth.classList.add("hidden");
       authBlock.classList.remove("hidden");
-      usernameDisplay.textContent = "Hello, " + username;
+      //usernameDisplay.textContent = "Hi, " + username;
     }
     // Ensure dropdown is closed on auth state change
     if (dropdown) {
